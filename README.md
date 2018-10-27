@@ -1,2 +1,2 @@
-# Roms
+# ROMS
 Restaurant Order Management System
