@@ -16,5 +16,25 @@ namespace ROMS
         {
             InitializeComponent();
         }
+        
+        private void bimbtnexit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+                
+
+        private void chkHide_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chkHide.Checked)
+            {
+                txtpin.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtpin.UseSystemPasswordChar = true;
+            }
+        }
+
+        
     }
 }
