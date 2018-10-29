@@ -90,5 +90,14 @@
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\eye-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\eyehide-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

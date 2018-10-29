@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmlogin));
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkHide = new System.Windows.Forms.CheckBox();
             this.pnlnumberpad = new System.Windows.Forms.Panel();
             this.btbtn1 = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btbtnclear = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btbtnClear = new Bunifu.Framework.UI.BunifuTileButton();
             this.btbtn2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.btbtn0 = new Bunifu.Framework.UI.BunifuTileButton();
             this.btbtn3 = new Bunifu.Framework.UI.BunifuTileButton();
@@ -45,25 +44,25 @@
             this.btbtn7 = new Bunifu.Framework.UI.BunifuTileButton();
             this.btbtn6 = new Bunifu.Framework.UI.BunifuTileButton();
             this.txtpin = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.bimbtnexit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rbAdmin = new System.Windows.Forms.RadioButton();
+            this.rbWaiter1 = new System.Windows.Forms.RadioButton();
+            this.rbKitchen = new System.Windows.Forms.RadioButton();
+            this.rbWaiter2 = new System.Windows.Forms.RadioButton();
+            this.rbBilling = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bimbtnexit = new Bunifu.Framework.UI.BunifuImageButton();
             this.groupBox1.SuspendLayout();
             this.pnlnumberpad.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bimbtnexit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bimbtnexit)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -100,7 +99,7 @@
             this.chkHide.FlatAppearance.CheckedBackColor = System.Drawing.Color.MediumSeaGreen;
             this.chkHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chkHide.ForeColor = System.Drawing.Color.White;
-            this.chkHide.Image = ((System.Drawing.Image)(resources.GetObject("chkHide.Image")));
+            this.chkHide.Image = global::ROMS.Properties.Resources.eyehide_24;
             this.chkHide.Location = new System.Drawing.Point(233, 27);
             this.chkHide.Name = "chkHide";
             this.chkHide.Size = new System.Drawing.Size(55, 46);
@@ -112,7 +111,7 @@
             // 
             this.pnlnumberpad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlnumberpad.Controls.Add(this.btbtn1);
-            this.pnlnumberpad.Controls.Add(this.btbtnclear);
+            this.pnlnumberpad.Controls.Add(this.btbtnClear);
             this.pnlnumberpad.Controls.Add(this.btbtn2);
             this.pnlnumberpad.Controls.Add(this.btbtn0);
             this.pnlnumberpad.Controls.Add(this.btbtn3);
@@ -147,27 +146,29 @@
             this.btbtn1.Name = "btbtn1";
             this.btbtn1.Size = new System.Drawing.Size(90, 65);
             this.btbtn1.TabIndex = 0;
+            this.btbtn1.Click += new System.EventHandler(this.numpad_Click);
             // 
-            // btbtnclear
+            // btbtnClear
             // 
-            this.btbtnclear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btbtnclear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btbtnclear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btbtnclear.color = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btbtnclear.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btbtnclear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btbtnclear.Font = new System.Drawing.Font("Open Sans", 21.75F);
-            this.btbtnclear.ForeColor = System.Drawing.Color.White;
-            this.btbtnclear.Image = null;
-            this.btbtnclear.ImagePosition = 0;
-            this.btbtnclear.ImageZoom = 50;
-            this.btbtnclear.LabelPosition = 54;
-            this.btbtnclear.LabelText = "Clear";
-            this.btbtnclear.Location = new System.Drawing.Point(94, 205);
-            this.btbtnclear.Margin = new System.Windows.Forms.Padding(6);
-            this.btbtnclear.Name = "btbtnclear";
-            this.btbtnclear.Size = new System.Drawing.Size(183, 65);
-            this.btbtnclear.TabIndex = 10;
+            this.btbtnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btbtnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btbtnClear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btbtnClear.color = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btbtnClear.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btbtnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btbtnClear.Font = new System.Drawing.Font("Open Sans", 21.75F);
+            this.btbtnClear.ForeColor = System.Drawing.Color.White;
+            this.btbtnClear.Image = null;
+            this.btbtnClear.ImagePosition = 0;
+            this.btbtnClear.ImageZoom = 50;
+            this.btbtnClear.LabelPosition = 54;
+            this.btbtnClear.LabelText = "Clear";
+            this.btbtnClear.Location = new System.Drawing.Point(94, 205);
+            this.btbtnClear.Margin = new System.Windows.Forms.Padding(6);
+            this.btbtnClear.Name = "btbtnClear";
+            this.btbtnClear.Size = new System.Drawing.Size(183, 65);
+            this.btbtnClear.TabIndex = 10;
+            this.btbtnClear.Click += new System.EventHandler(this.btbtnClear_Click);
             // 
             // btbtn2
             // 
@@ -189,6 +190,7 @@
             this.btbtn2.Name = "btbtn2";
             this.btbtn2.Size = new System.Drawing.Size(90, 65);
             this.btbtn2.TabIndex = 1;
+            this.btbtn2.Click += new System.EventHandler(this.numpad_Click);
             // 
             // btbtn0
             // 
@@ -210,6 +212,7 @@
             this.btbtn0.Name = "btbtn0";
             this.btbtn0.Size = new System.Drawing.Size(90, 65);
             this.btbtn0.TabIndex = 9;
+            this.btbtn0.Click += new System.EventHandler(this.numpad_Click);
             // 
             // btbtn3
             // 
@@ -231,6 +234,7 @@
             this.btbtn3.Name = "btbtn3";
             this.btbtn3.Size = new System.Drawing.Size(90, 65);
             this.btbtn3.TabIndex = 2;
+            this.btbtn3.Click += new System.EventHandler(this.numpad_Click);
             // 
             // btbtn9
             // 
@@ -252,6 +256,7 @@
             this.btbtn9.Name = "btbtn9";
             this.btbtn9.Size = new System.Drawing.Size(90, 65);
             this.btbtn9.TabIndex = 8;
+            this.btbtn9.Click += new System.EventHandler(this.numpad_Click);
             // 
             // btbtn4
             // 
@@ -273,6 +278,7 @@
             this.btbtn4.Name = "btbtn4";
             this.btbtn4.Size = new System.Drawing.Size(90, 65);
             this.btbtn4.TabIndex = 3;
+            this.btbtn4.Click += new System.EventHandler(this.numpad_Click);
             // 
             // btbtn8
             // 
@@ -294,6 +300,7 @@
             this.btbtn8.Name = "btbtn8";
             this.btbtn8.Size = new System.Drawing.Size(90, 65);
             this.btbtn8.TabIndex = 7;
+            this.btbtn8.Click += new System.EventHandler(this.numpad_Click);
             // 
             // btbtn5
             // 
@@ -315,6 +322,7 @@
             this.btbtn5.Name = "btbtn5";
             this.btbtn5.Size = new System.Drawing.Size(90, 65);
             this.btbtn5.TabIndex = 4;
+            this.btbtn5.Click += new System.EventHandler(this.numpad_Click);
             // 
             // btbtn7
             // 
@@ -336,6 +344,7 @@
             this.btbtn7.Name = "btbtn7";
             this.btbtn7.Size = new System.Drawing.Size(90, 65);
             this.btbtn7.TabIndex = 6;
+            this.btbtn7.Click += new System.EventHandler(this.numpad_Click);
             // 
             // btbtn6
             // 
@@ -357,45 +366,21 @@
             this.btbtn6.Name = "btbtn6";
             this.btbtn6.Size = new System.Drawing.Size(90, 65);
             this.btbtn6.TabIndex = 5;
+            this.btbtn6.Click += new System.EventHandler(this.numpad_Click);
             // 
             // txtpin
             // 
             this.txtpin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtpin.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtpin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtpin.Font = new System.Drawing.Font("Roboto", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpin.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpin.Location = new System.Drawing.Point(11, 27);
+            this.txtpin.MaxLength = 4;
             this.txtpin.Name = "txtpin";
-            this.txtpin.Size = new System.Drawing.Size(218, 46);
+            this.txtpin.Size = new System.Drawing.Size(218, 43);
             this.txtpin.TabIndex = 1;
+            this.txtpin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtpin.UseSystemPasswordChar = true;
-            // 
-            // bimbtnexit
-            // 
-            this.bimbtnexit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bimbtnexit.Image = ((System.Drawing.Image)(resources.GetObject("bimbtnexit.Image")));
-            this.bimbtnexit.ImageActive = null;
-            this.bimbtnexit.Location = new System.Drawing.Point(1516, 2);
-            this.bimbtnexit.Name = "bimbtnexit";
-            this.bimbtnexit.Size = new System.Drawing.Size(64, 64);
-            this.bimbtnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bimbtnexit.TabIndex = 9;
-            this.bimbtnexit.TabStop = false;
-            this.bimbtnexit.Zoom = 10;
-            this.bimbtnexit.Click += new System.EventHandler(this.bimbtnexit_Click_1);
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(287, 282);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(161, 159);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bunifuImageButton1.TabIndex = 16;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 0;
             // 
             // label1
             // 
@@ -424,101 +409,101 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.radioButton1);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton2);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton5);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton4);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton3);
+            this.flowLayoutPanel1.Controls.Add(this.rbAdmin);
+            this.flowLayoutPanel1.Controls.Add(this.rbWaiter1);
+            this.flowLayoutPanel1.Controls.Add(this.rbKitchen);
+            this.flowLayoutPanel1.Controls.Add(this.rbWaiter2);
+            this.flowLayoutPanel1.Controls.Add(this.rbBilling);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 23);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(305, 333);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // radioButton1
+            // rbAdmin
             // 
-            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.BackColor = System.Drawing.Color.White;
-            this.radioButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(146, 98);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Admin";
-            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.rbAdmin.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbAdmin.BackColor = System.Drawing.Color.White;
+            this.rbAdmin.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.rbAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbAdmin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
+            this.rbAdmin.Location = new System.Drawing.Point(3, 3);
+            this.rbAdmin.Name = "rbAdmin";
+            this.rbAdmin.Size = new System.Drawing.Size(146, 98);
+            this.rbAdmin.TabIndex = 0;
+            this.rbAdmin.TabStop = true;
+            this.rbAdmin.Text = "Admin";
+            this.rbAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbAdmin.UseVisualStyleBackColor = false;
             // 
-            // radioButton2
+            // rbWaiter1
             // 
-            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton2.BackColor = System.Drawing.Color.White;
-            this.radioButton2.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
-            this.radioButton2.Location = new System.Drawing.Point(155, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(146, 98);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Philip";
-            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton2.UseVisualStyleBackColor = false;
+            this.rbWaiter1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbWaiter1.BackColor = System.Drawing.Color.White;
+            this.rbWaiter1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.rbWaiter1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbWaiter1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbWaiter1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
+            this.rbWaiter1.Location = new System.Drawing.Point(155, 3);
+            this.rbWaiter1.Name = "rbWaiter1";
+            this.rbWaiter1.Size = new System.Drawing.Size(146, 98);
+            this.rbWaiter1.TabIndex = 1;
+            this.rbWaiter1.TabStop = true;
+            this.rbWaiter1.Text = "Philip";
+            this.rbWaiter1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbWaiter1.UseVisualStyleBackColor = false;
             // 
-            // radioButton5
+            // rbKitchen
             // 
-            this.radioButton5.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton5.BackColor = System.Drawing.Color.White;
-            this.radioButton5.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.radioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
-            this.radioButton5.Location = new System.Drawing.Point(3, 107);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(146, 98);
-            this.radioButton5.TabIndex = 4;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Kitchen";
-            this.radioButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton5.UseVisualStyleBackColor = false;
+            this.rbKitchen.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbKitchen.BackColor = System.Drawing.Color.White;
+            this.rbKitchen.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.rbKitchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbKitchen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbKitchen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
+            this.rbKitchen.Location = new System.Drawing.Point(3, 107);
+            this.rbKitchen.Name = "rbKitchen";
+            this.rbKitchen.Size = new System.Drawing.Size(146, 98);
+            this.rbKitchen.TabIndex = 4;
+            this.rbKitchen.TabStop = true;
+            this.rbKitchen.Text = "Kitchen";
+            this.rbKitchen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbKitchen.UseVisualStyleBackColor = false;
             // 
-            // radioButton4
+            // rbWaiter2
             // 
-            this.radioButton4.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton4.BackColor = System.Drawing.Color.White;
-            this.radioButton4.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.radioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
-            this.radioButton4.Location = new System.Drawing.Point(155, 107);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(146, 98);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Arun";
-            this.radioButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton4.UseVisualStyleBackColor = false;
+            this.rbWaiter2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbWaiter2.BackColor = System.Drawing.Color.White;
+            this.rbWaiter2.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.rbWaiter2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbWaiter2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbWaiter2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
+            this.rbWaiter2.Location = new System.Drawing.Point(155, 107);
+            this.rbWaiter2.Name = "rbWaiter2";
+            this.rbWaiter2.Size = new System.Drawing.Size(146, 98);
+            this.rbWaiter2.TabIndex = 3;
+            this.rbWaiter2.TabStop = true;
+            this.rbWaiter2.Text = "Arun";
+            this.rbWaiter2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbWaiter2.UseVisualStyleBackColor = false;
             // 
-            // radioButton3
+            // rbBilling
             // 
-            this.radioButton3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton3.BackColor = System.Drawing.Color.White;
-            this.radioButton3.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
-            this.radioButton3.Location = new System.Drawing.Point(3, 211);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(146, 98);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Billing";
-            this.radioButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton3.UseVisualStyleBackColor = false;
+            this.rbBilling.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbBilling.BackColor = System.Drawing.Color.White;
+            this.rbBilling.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.rbBilling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbBilling.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbBilling.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
+            this.rbBilling.Location = new System.Drawing.Point(3, 211);
+            this.rbBilling.Name = "rbBilling";
+            this.rbBilling.Size = new System.Drawing.Size(146, 98);
+            this.rbBilling.TabIndex = 2;
+            this.rbBilling.TabStop = true;
+            this.rbBilling.Text = "Billing";
+            this.rbBilling.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbBilling.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -559,6 +544,33 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Copyrights © 2018. All rights reserved By Amal Salvin Joseph";
             // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuImageButton1.Image = global::ROMS.Properties.Resources.Logo;
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(287, 282);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(161, 159);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bunifuImageButton1.TabIndex = 16;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 0;
+            // 
+            // bimbtnexit
+            // 
+            this.bimbtnexit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bimbtnexit.Image = global::ROMS.Properties.Resources.Exit_96;
+            this.bimbtnexit.ImageActive = null;
+            this.bimbtnexit.Location = new System.Drawing.Point(1516, 2);
+            this.bimbtnexit.Name = "bimbtnexit";
+            this.bimbtnexit.Size = new System.Drawing.Size(64, 64);
+            this.bimbtnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bimbtnexit.TabIndex = 9;
+            this.bimbtnexit.TabStop = false;
+            this.bimbtnexit.Zoom = 10;
+            this.bimbtnexit.Click += new System.EventHandler(this.bimbtnexit_Click_1);
+            // 
             // frmlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,13 +591,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Click += new System.EventHandler(this.numpad_Click);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnlnumberpad.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bimbtnexit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bimbtnexit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -596,7 +609,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel pnlnumberpad;
         private Bunifu.Framework.UI.BunifuTileButton btbtn1;
-        private Bunifu.Framework.UI.BunifuTileButton btbtnclear;
+        private Bunifu.Framework.UI.BunifuTileButton btbtnClear;
         private Bunifu.Framework.UI.BunifuTileButton btbtn2;
         private Bunifu.Framework.UI.BunifuTileButton btbtn0;
         private Bunifu.Framework.UI.BunifuTileButton btbtn3;
@@ -612,11 +625,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbAdmin;
+        private System.Windows.Forms.RadioButton rbWaiter1;
+        private System.Windows.Forms.RadioButton rbKitchen;
+        private System.Windows.Forms.RadioButton rbWaiter2;
+        private System.Windows.Forms.RadioButton rbBilling;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.CheckBox chkHide;
