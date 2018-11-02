@@ -77,6 +77,11 @@ namespace ROMS
                 txtpin.Enabled = true;
             txtpin.Focus();
         }
-        
+
+        private void tmrClock_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            lblDate.Text = DateTime.Now.ToLongDateString();
+        }
     }
 }

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.lblApplicationTitle = new System.Windows.Forms.Label();
             this.gpPassword = new System.Windows.Forms.GroupBox();
-            this.chkHide = new System.Windows.Forms.CheckBox();
             this.pnlnumberpad = new System.Windows.Forms.Panel();
             this.btbtn1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.btbtnClear = new Bunifu.Framework.UI.BunifuTileButton();
@@ -56,9 +55,12 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblCopyrights = new System.Windows.Forms.Label();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.lblDate = new System.Windows.Forms.Label();
             this.imgLogo = new Bunifu.Framework.UI.BunifuImageButton();
             this.bimbtnExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.chkHide = new System.Windows.Forms.CheckBox();
+            this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.gpPassword.SuspendLayout();
             this.pnlnumberpad.SuspendLayout();
             this.gpUser.SuspendLayout();
@@ -93,21 +95,6 @@
             this.gpPassword.TabIndex = 10;
             this.gpPassword.TabStop = false;
             this.gpPassword.Text = "Enter Your PIN";
-            // 
-            // chkHide
-            // 
-            this.chkHide.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkHide.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.chkHide.FlatAppearance.CheckedBackColor = System.Drawing.Color.MediumSeaGreen;
-            this.chkHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkHide.ForeColor = System.Drawing.Color.White;
-            this.chkHide.Image = global::ROMS.Properties.Resources.eyehide_24;
-            this.chkHide.Location = new System.Drawing.Point(233, 27);
-            this.chkHide.Name = "chkHide";
-            this.chkHide.Size = new System.Drawing.Size(55, 46);
-            this.chkHide.TabIndex = 21;
-            this.chkHide.UseVisualStyleBackColor = true;
-            this.chkHide.CheckedChanged += new System.EventHandler(this.chkHide_CheckedChanged);
             // 
             // pnlnumberpad
             // 
@@ -392,9 +379,9 @@
             this.lblTime.ForeColor = System.Drawing.Color.White;
             this.lblTime.Location = new System.Drawing.Point(12, 9);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(169, 39);
+            this.lblTime.Size = new System.Drawing.Size(188, 39);
             this.lblTime.TabIndex = 17;
-            this.lblTime.Text = "HH:MM:SS";
+            this.lblTime.Text = "hh:mm:ss tt";
             // 
             // gpUser
             // 
@@ -555,6 +542,22 @@
             this.lblCopyrights.TabIndex = 21;
             this.lblCopyrights.Text = "Copyrights © 2018. All rights reserved By Amal Salvin Joseph";
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 15;
+            this.bunifuElipse1.TargetControl = this.lblTitle;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.White;
+            this.lblDate.Location = new System.Drawing.Point(14, 48);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(203, 30);
+            this.lblDate.TabIndex = 25;
+            this.lblDate.Text = "dd MMMM yyyy";
+            // 
             // imgLogo
             // 
             this.imgLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -582,10 +585,25 @@
             this.bimbtnExit.Zoom = 10;
             this.bimbtnExit.Click += new System.EventHandler(this.bimbtnExit_Click);
             // 
-            // bunifuElipse1
+            // chkHide
             // 
-            this.bunifuElipse1.ElipseRadius = 15;
-            this.bunifuElipse1.TargetControl = this.lblTitle;
+            this.chkHide.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chkHide.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.chkHide.FlatAppearance.CheckedBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.chkHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkHide.ForeColor = System.Drawing.Color.White;
+            this.chkHide.Image = global::ROMS.Properties.Resources.eyehide_24;
+            this.chkHide.Location = new System.Drawing.Point(233, 27);
+            this.chkHide.Name = "chkHide";
+            this.chkHide.Size = new System.Drawing.Size(55, 46);
+            this.chkHide.TabIndex = 21;
+            this.chkHide.UseVisualStyleBackColor = true;
+            this.chkHide.CheckedChanged += new System.EventHandler(this.chkHide_CheckedChanged);
+            // 
+            // tmrClock
+            // 
+            this.tmrClock.Enabled = true;
+            this.tmrClock.Tick += new System.EventHandler(this.tmrClock_Tick);
             // 
             // frmLogin
             // 
@@ -593,6 +611,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblCopyrights);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblTitle);
@@ -637,19 +656,13 @@
         private Bunifu.Framework.UI.BunifuTileButton btbtn6;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtpin;
         private Bunifu.Framework.UI.BunifuImageButton bimbtnExit;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gpUser;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.RadioButton rbAdmin;
         private System.Windows.Forms.RadioButton rbWaiter1;
         private System.Windows.Forms.RadioButton rbKitchen;
         private System.Windows.Forms.RadioButton rbWaiter2;
         private System.Windows.Forms.RadioButton rbBilling;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.CheckBox chkHide;
-        private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.FlowLayoutPanel flpnlUser;
@@ -657,6 +670,8 @@
         private System.Windows.Forms.Label lblCopyrights;
         private Bunifu.Framework.UI.BunifuImageButton imgLogo;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Timer tmrClock;
     }
 }
 

@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,6 +107,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Billing-100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Food Order100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Chef Hat-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Logout-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
